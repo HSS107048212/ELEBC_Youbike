@@ -25,7 +25,8 @@ import datetime
 # 獲取今天的日期
 today = datetime.date.today()
 
-# 計算 1 天前的日期
+
+# 一次計算 1 天的資料，如days=1表示計算前1天日期的資料 (UI:days)
 days_ago = today - datetime.timedelta(days=1) #後續更改----------------------------------------------------------------------------
 
 # 將日期格式化為 YYYY-MM-DD
@@ -34,7 +35,7 @@ print(formatted_date)
 # 指定你的目錄路徑
 
 # 搜索與計算出的日期匹配的文件名
-matched_files = [f for f in os.listdir(directory_path) if formatted_date in f]
+matched_files = [f for f in os.listdir(directory_path) if formatted_date in f and "AC_PV" not in f]
 
 # 排序文件名列表，假設日期和時間格式固定，可以直接按字符串排序
 matched_files = sorted(matched_files)
