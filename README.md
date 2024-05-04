@@ -7,4 +7,4 @@ How to set up the bat in Windows in your own server, you can follow the steps in
 3. lat to latitude
 4. lng to longitude
 
-so here revise it to maintain and match the original colnames
+so updating in 20240503 is to maintain for matching the original colnames
