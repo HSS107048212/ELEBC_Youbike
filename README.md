@@ -1,5 +1,5 @@
 # ELEBC_Youbike
-== How to set up the bat in Windows in your own server, you can follow the steps in the file "work schedule.pptx". ==
+==How to set up the bat in Windows in your own server, you can follow the steps in the file "work schedule.pptx".==
 
 ## 20240503 Youbike change the column names
 1. sbi to available_rent_bike
