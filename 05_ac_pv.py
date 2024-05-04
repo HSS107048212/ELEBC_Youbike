@@ -102,6 +102,15 @@ for file_path, time_label in files:
     print(time_label)
     # Read data from file
     data = pd.read_excel(file_path)
+    
+    # 20240503 Youbike change the column names, so here revise it to originals
+    if 'available_return_bikes' in data.columns: data = data.rename(columns={'available_return_bikes': 'bemp'})
+    if 'available_rent_bikes' in data.columns: data = data.rename(columns={'available_rent_bikes': 'sbi'})
+    if 'latitude' in data.columns: data = data.rename(columns={'latitude': 'lat'})
+    if 'longitude' in data.columns:data = data.rename(columns={'longitude': 'lng'})
+    if 'total' in data.columns: data = data.rename(columns={'total': 'tot'})
+
+    
     selected_columns = ['sno', 'sna',"sarea","ar","lat","lng",'tot','infoDate']
     # 创建新的DataFrame，只包含选定的列
     data= data[selected_columns]

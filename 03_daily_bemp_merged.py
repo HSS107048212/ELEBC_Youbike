@@ -54,6 +54,9 @@ def load_and_merge_youbike_data(files):
         # Read data from file
         data = pd.read_excel(file_path)
         #print(data)
+        # Check if column 'available_return_bikes' exists and rename it if it does
+        if 'available_return_bikes' in data.columns:
+            data = data.rename(columns={'available_return_bikes': 'bemp'})
         # Extract required columns and rename for clarity # time_label=04-12 1730 #time_label.split()[-1]}=1730
         data_reduced = data[['sna', 'bemp']].rename(columns={'bemp': f'{time_label.split()[-1]}'}) #如果2024-03-28 merged_data.xlsx 放在同一個資料夾，會出錯，因為相同檔名，會被讀取。
         print(time_label)
